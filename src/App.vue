@@ -6,12 +6,16 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+// 可以自定义对象属性的别名进行调用
+import { HelloWorld as test } from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld,
+    // 调用自定义别名
+    test
   }
 }
 </script>
