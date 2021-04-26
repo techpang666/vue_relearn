@@ -6,6 +6,9 @@
     <test :money="count" :obj="myobj">
       通过props将数据在组件树中继续自上而下的传递
     </test>
+    <test add-action="fatherFn">
+      通过$emit和@作为信息的向上传递
+    </test>
   </div>
 </template>
 
@@ -21,6 +24,7 @@
  */
 
 export default {
+  // 父传子(props)测试代码
   props: {
     money: {
       type: Number,
@@ -35,6 +39,10 @@ export default {
         }
       }
     }
+  },
+  mounted () {
+    // 子传父($emit)测试代码
+    this.$emit('add-action')
   }
 }
 </script>
